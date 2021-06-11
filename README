@@ -1,0 +1,336 @@
+wangxin-study
+旺鑫树学习考试系统
+旺鑫树教育系统（wangxin-education）致力打造一个低成本通用的在线教育系统，让用户直接通过系统可视化配置并尽可能无须修改任何代码即可实现上线商用。系统采用前后端分离模式，前台和移动端采用vue.js为核心框架，后台采用Java语言，框架springboot+spring+mybatis+redis+mysql。系统目前主要功能有课程点播、直播、练习、考试、支付、营销等功能。
+
+演示地址：
+前端演示地址：
+移动端演示地址：
+后台演示地址：
+
+PC前台主要功能介绍
+首页功能：导航模块，订单模块，广告模块
+列表功能：分类模块，课程详情页功能，课程介绍、目录的展示和购买、播放功能等
+个人中心：具有个人信息设置、密码修改、订单管理、学习记录、考试、学习卡、优惠券等功能
+教师中心：课程管理、试题管理、考试管理等
+
+移动端功能介绍：
+首页功能：广告、公告、中部导航、课程专区
+列表功能：分类模块，课程详情页功能，课程介绍、目录的展示和购买、播放功能等
+试题练习：刷题练习，多端同步刷题功能
+考试模块：进行考试
+个人中心：学习卡、优惠券、订单管理、考试、个人信息设置等等
+
+后台主要功能介绍
+权限管理：多角色多用户自定义配置
+系统配置：站点配置及第三方参数配置
+教师管理：教师管理、审核
+学生管理：管理学生
+课程管理：具有课程审核、发布功能
+用户登录：同一时间只允许同一个账号在同一个地方登录，防止账号共享
+站点设置：头部、底部、底部二维码、友情链接、移动端中部导航设置等
+支付功能：目前集成了支付宝支付
+营销管理：学习卡、优惠券等
+学习记录：查看学生学习记录
+
+系统中采用的框架遵循相关知识产权协议，对全部引用的框架所有方表示致谢。
+后台引用的框架列表：
+/com/alibaba/fastjson/1.2.70/fastjson-1.2.70.jar
+/org/springframework/boot/spring-boot-starter-thymeleaf/2.0.8.RELEASE/spring-boot-starter-thymeleaf-2.0.8.RELEASE.jar
+/org/thymeleaf/thymeleaf-spring5/3.0.11.RELEASE/thymeleaf-spring5-3.0.11.RELEASE.jar
+/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.jar
+/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.jar
+/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar
+/org/thymeleaf/extras/thymeleaf-extras-java8time/3.0.2.RELEASE/thymeleaf-extras-java8time-3.0.2.RELEASE.jar
+/org/springframework/boot/spring-boot-starter-web/2.0.8.RELEASE/spring-boot-starter-web-2.0.8.RELEASE.jar
+/org/springframework/boot/spring-boot-starter-json/2.0.8.RELEASE/spring-boot-starter-json-2.0.8.RELEASE.jar
+/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.9.8/jackson-datatype-jdk8-2.9.8.jar
+/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.9.8/jackson-datatype-jsr310-2.9.8.jar
+/com/fasterxml/jackson/module/jackson-module-parameter-names/2.9.8/jackson-module-parameter-names-2.9.8.jar
+/org/springframework/boot/spring-boot-starter-tomcat/2.0.8.RELEASE/spring-boot-starter-tomcat-2.0.8.RELEASE.jar
+/org/apache/tomcat/embed/tomcat-embed-core/8.5.37/tomcat-embed-core-8.5.37.jar
+/org/apache/tomcat/embed/tomcat-embed-el/8.5.37/tomcat-embed-el-8.5.37.jar
+/org/apache/tomcat/embed/tomcat-embed-websocket/8.5.37/tomcat-embed-websocket-8.5.37.jar
+/org/hibernate/validator/hibernate-validator/6.0.14.Final/hibernate-validator-6.0.14.Final.jar
+/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar
+/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar
+/com/fasterxml/classmate/1.3.4/classmate-1.3.4.jar
+/org/springframework/spring-web/5.0.12.RELEASE/spring-web-5.0.12.RELEASE.jar
+/org/springframework/spring-beans/5.0.12.RELEASE/spring-beans-5.0.12.RELEASE.jar
+/org/springframework/spring-webmvc/5.0.12.RELEASE/spring-webmvc-5.0.12.RELEASE.jar
+/org/springframework/spring-aop/5.0.12.RELEASE/spring-aop-5.0.12.RELEASE.jar
+/org/springframework/spring-expression/5.0.12.RELEASE/spring-expression-5.0.12.RELEASE.jar
+/org/springframework/boot/spring-boot-starter/2.0.8.RELEASE/spring-boot-starter-2.0.8.RELEASE.jar
+/org/springframework/boot/spring-boot/2.0.8.RELEASE/spring-boot-2.0.8.RELEASE.jar
+/org/springframework/boot/spring-boot-autoconfigure/2.0.8.RELEASE/spring-boot-autoconfigure-2.0.8.RELEASE.jar
+/org/springframework/boot/spring-boot-starter-logging/2.0.8.RELEASE/spring-boot-starter-logging-2.0.8.RELEASE.jar
+/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar
+/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar
+/org/apache/logging/log4j/log4j-to-slf4j/2.10.0/log4j-to-slf4j-2.10.0.jar
+/org/apache/logging/log4j/log4j-api/2.10.0/log4j-api-2.10.0.jar
+/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar
+/org/springframework/spring-core/5.0.12.RELEASE/spring-core-5.0.12.RELEASE.jar
+/org/springframework/spring-jcl/5.0.12.RELEASE/spring-jcl-5.0.12.RELEASE.jar
+/org/yaml/snakeyaml/1.19/snakeyaml-1.19.jar
+/org/springframework/boot/spring-boot-starter-test/2.0.8.RELEASE/spring-boot-starter-test-2.0.8.RELEASE.jar
+/org/springframework/boot/spring-boot-test/2.0.8.RELEASE/spring-boot-test-2.0.8.RELEASE.jar
+/org/springframework/boot/spring-boot-test-autoconfigure/2.0.8.RELEASE/spring-boot-test-autoconfigure-2.0.8.RELEASE.jar
+/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar
+/org/assertj/assertj-core/3.9.1/assertj-core-3.9.1.jar
+/org/mockito/mockito-core/2.15.0/mockito-core-2.15.0.jar
+/net/bytebuddy/byte-buddy/1.7.11/byte-buddy-1.7.11.jar
+/net/bytebuddy/byte-buddy-agent/1.7.11/byte-buddy-agent-1.7.11.jar
+/org/objenesis/objenesis/2.6/objenesis-2.6.jar
+/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar
+/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar
+/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar
+/org/springframework/spring-test/5.0.12.RELEASE/spring-test-5.0.12.RELEASE.jar
+/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.jar
+/com/alibaba/dubbo/2.5.3/dubbo-2.5.3.jar
+/org/jboss/netty/netty/3.2.5.Final/netty-3.2.5.Final.jar
+/org/javassist/javassist/3.18.2-GA/javassist-3.18.2-GA.jar
+/org/apache/zookeeper/zookeeper/3.4.6/zookeeper-3.4.6.jar
+/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
+/jline/jline/0.9.94/jline-0.9.94.jar
+/io/netty/netty/3.7.0.Final/netty-3.7.0.Final.jar
+/com/github/sgroschupf/zkclient/0.1/zkclient-0.1.jar
+/log4j/log4j/1.2.14/log4j-1.2.14.jar
+/com/qiniu/qiniu-java-sdk/7.2.9/qiniu-java-sdk-7.2.9.jar
+/com/squareup/okhttp3/okhttp/3.14.2/okhttp-3.14.2.jar
+/com/squareup/okio/okio/1.17.2/okio-1.17.2.jar
+/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
+/com/qiniu/happy-dns-java/0.1.6/happy-dns-java-0.1.6.jar
+/junit/junit/4.12/junit-4.12.jar
+/ws/schild/jave-all-deps/2.5.1/jave-all-deps-2.5.1.jar
+/ws/schild/jave-core/2.5.1/jave-core-2.5.1.jar
+/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar
+/ws/schild/jave-nativebin-win32/2.5.1/jave-nativebin-win32-2.5.1.jar
+/ws/schild/jave-nativebin-win64/2.5.1/jave-nativebin-win64-2.5.1.jar
+/ws/schild/jave-nativebin-linux32/2.5.1/jave-nativebin-linux32-2.5.1.jar
+/ws/schild/jave-nativebin-linux64/2.5.1/jave-nativebin-linux64-2.5.1.jar
+/ws/schild/jave-nativebin-osx64/2.5.1/jave-nativebin-osx64-2.5.1.jar
+/com/alibaba/druid/1.1.12/druid-1.1.12.jar
+/org/mybatis/spring/boot/mybatis-spring-boot-starter/2.0.1/mybatis-spring-boot-starter-2.0.1.jar
+/org/springframework/boot/spring-boot-starter-jdbc/2.0.8.RELEASE/spring-boot-starter-jdbc-2.0.8.RELEASE.jar
+/com/zaxxer/HikariCP/2.7.9/HikariCP-2.7.9.jar
+/org/springframework/spring-jdbc/5.0.12.RELEASE/spring-jdbc-5.0.12.RELEASE.jar
+/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/2.0.1/mybatis-spring-boot-autoconfigure-2.0.1.jar
+/org/mybatis/mybatis/3.5.1/mybatis-3.5.1.jar
+/org/mybatis/mybatis-spring/2.0.1/mybatis-spring-2.0.1.jar
+/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar
+/com/baomidou/mybatis-plus-boot-starter/3.1.2/mybatis-plus-boot-starter-3.1.2.jar
+/com/baomidou/mybatis-plus/3.1.2/mybatis-plus-3.1.2.jar
+/com/baomidou/mybatis-plus-extension/3.1.2/mybatis-plus-extension-3.1.2.jar
+/com/baomidou/mybatis-plus-core/3.1.2/mybatis-plus-core-3.1.2.jar
+/com/baomidou/mybatis-plus-annotation/3.1.2/mybatis-plus-annotation-3.1.2.jar
+/com/github/jsqlparser/jsqlparser/1.2/jsqlparser-1.2.jar
+/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar
+/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar
+/com/google/zxing/core/2.1/core-2.1.jar
+/com/alipay/sdk/alipay-sdk-java/3.3.49.ALL/alipay-sdk-java-3.3.49.ALL.jar
+/commons-configuration/commons-configuration/1.1/commons-configuration-1.1.jar
+/commons-lang/commons-lang/2.0/commons-lang-2.0.jar
+/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar
+/commons-digester/commons-digester/1.5/commons-digester-1.5.jar
+/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar
+/oro/oro/2.0.7/oro-2.0.7.jar
+/org/springframework/boot/spring-boot-starter-actuator/2.0.8.RELEASE/spring-boot-starter-actuator-2.0.8.RELEASE.jar
+/org/springframework/boot/spring-boot-actuator-autoconfigure/2.0.8.RELEASE/spring-boot-actuator-autoconfigure-2.0.8.RELEASE.jar
+/org/springframework/boot/spring-boot-actuator/2.0.8.RELEASE/spring-boot-actuator-2.0.8.RELEASE.jar
+/io/micrometer/micrometer-core/1.0.9/micrometer-core-1.0.9.jar
+/org/hdrhistogram/HdrHistogram/2.1.10/HdrHistogram-2.1.10.jar
+/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar
+/org/springframework/boot/spring-boot-starter-cache/2.0.8.RELEASE/spring-boot-starter-cache-2.0.8.RELEASE.jar
+/org/springframework/spring-context/5.0.12.RELEASE/spring-context-5.0.12.RELEASE.jar
+/org/springframework/spring-context-support/5.0.12.RELEASE/spring-context-support-5.0.12.RELEASE.jar
+/org/springframework/boot/spring-boot-starter-data-redis/2.0.8.RELEASE/spring-boot-starter-data-redis-2.0.8.RELEASE.jar
+/org/springframework/data/spring-data-redis/2.0.13.RELEASE/spring-data-redis-2.0.13.RELEASE.jar
+/org/springframework/data/spring-data-keyvalue/2.0.13.RELEASE/spring-data-keyvalue-2.0.13.RELEASE.jar
+/org/springframework/data/spring-data-commons/2.0.13.RELEASE/spring-data-commons-2.0.13.RELEASE.jar
+/org/springframework/spring-tx/5.0.12.RELEASE/spring-tx-5.0.12.RELEASE.jar
+/org/springframework/spring-oxm/5.0.12.RELEASE/spring-oxm-5.0.12.RELEASE.jar
+/io/lettuce/lettuce-core/5.0.5.RELEASE/lettuce-core-5.0.5.RELEASE.jar
+/io/projectreactor/reactor-core/3.1.14.RELEASE/reactor-core-3.1.14.RELEASE.jar
+/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.jar
+/io/netty/netty-common/4.1.31.Final/netty-common-4.1.31.Final.jar
+/io/netty/netty-transport/4.1.31.Final/netty-transport-4.1.31.Final.jar
+/io/netty/netty-buffer/4.1.31.Final/netty-buffer-4.1.31.Final.jar
+/io/netty/netty-resolver/4.1.31.Final/netty-resolver-4.1.31.Final.jar
+/io/netty/netty-handler/4.1.31.Final/netty-handler-4.1.31.Final.jar
+/io/netty/netty-codec/4.1.31.Final/netty-codec-4.1.31.Final.jar
+/org/springframework/boot/spring-boot-starter-mail/2.0.8.RELEASE/spring-boot-starter-mail-2.0.8.RELEASE.jar
+/com/sun/mail/javax.mail/1.6.2/javax.mail-1.6.2.jar
+/javax/activation/activation/1.1/activation-1.1.jar
+/org/springframework/boot/spring-boot-starter-freemarker/2.0.8.RELEASE/spring-boot-starter-freemarker-2.0.8.RELEASE.jar
+/org/freemarker/freemarker/2.3.28/freemarker-2.3.28.jar
+/org/springframework/boot/spring-boot-devtools/2.0.8.RELEASE/spring-boot-devtools-2.0.8.RELEASE.jar
+/com/aliyun/oss/aliyun-sdk-oss/2.2.1/aliyun-sdk-oss-2.2.1.jar
+/org/jdom/jdom/1.1/jdom-1.1.jar
+/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar
+/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar
+/com/aliyun/oas/aliyun-oas/0.2.5/aliyun-oas-0.2.5.jar
+/com/ning/async-http-client/1.8.12/async-http-client-1.8.12.jar
+/net/minidev/json-smart/1.2/json-smart-1.2.jar
+/com/aliyun/aliyun-java-sdk-core/2.4.2/aliyun-java-sdk-core-2.4.2.jar
+/com/aliyun/aliyun-java-sdk-dysmsapi/1.0.0/aliyun-java-sdk-dysmsapi-1.0.0.jar
+/com/xiaoleilu/hutool-all/3.2.3/hutool-all-3.2.3.jar
+/com/auth0/java-jwt/3.2.0/java-jwt-3.2.0.jar
+/org/bouncycastle/bcprov-jdk15on/1.55/bcprov-jdk15on-1.55.jar
+/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar
+/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar
+/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar
+/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar
+/org/apache/poi/poi/3.17/poi-3.17.jar
+/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar
+/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar
+/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar
+/stax/stax-api/1.0.1/stax-api-1.0.1.jar
+/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar
+/com/github/abel533/ECharts/3.0.0.2/ECharts-3.0.0.2.jar
+/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar
+/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6.jar
+/org/apache/httpcomponents/httpcore/4.4.10/httpcore-4.4.10.jar
+/org/apache/httpcomponents/httpmime/4.5.6/httpmime-4.5.6.jar
+/org/slf4j/log4j-over-slf4j/1.7.25/log4j-over-slf4j-1.7.25.jar
+/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar
+/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar
+/net/logstash/logback/logstash-logback-encoder/5.2/logstash-logback-encoder-5.2.jar
+/com/itextpdf/itextpdf/5.5.13/itextpdf-5.5.13.jar
+/com/spring4all/swagger-spring-boot-starter/1.8.0.RELEASE/swagger-spring-boot-starter-1.8.0.RELEASE.jar
+/io/springfox/springfox-swagger-ui/2.9.2/springfox-swagger-ui-2.9.2.jar
+/io/springfox/springfox-spring-web/2.9.2/springfox-spring-web-2.9.2.jar
+/io/springfox/springfox-swagger2/2.9.2/springfox-swagger2-2.9.2.jar
+/io/springfox/springfox-spi/2.9.2/springfox-spi-2.9.2.jar
+/io/springfox/springfox-core/2.9.2/springfox-core-2.9.2.jar
+/io/springfox/springfox-schema/2.9.2/springfox-schema-2.9.2.jar
+/io/springfox/springfox-swagger-common/2.9.2/springfox-swagger-common-2.9.2.jar
+/com/google/guava/guava/20.0/guava-20.0.jar
+/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar
+/org/springframework/plugin/spring-plugin-metadata/1.2.0.RELEASE/spring-plugin-metadata-1.2.0.RELEASE.jar
+/org/mapstruct/mapstruct/1.2.0.Final/mapstruct-1.2.0.Final.jar
+/io/springfox/springfox-bean-validators/2.9.2/springfox-bean-validators-2.9.2.jar
+/io/swagger/swagger-models/1.5.21/swagger-models-1.5.21.jar
+/io/swagger/swagger-annotations/1.5.21/swagger-annotations-1.5.21.jar
+/com/github/xiaoymin/swagger-bootstrap-ui/1.9.1/swagger-bootstrap-ui-1.9.1.jar
+/org/projectlombok/lombok/1.16.22/lombok-1.16.22.jar
+
+系统使用了领课教育roncoo-education部分前后端代码(基于MIT协议)：
+roncoo-education-admin https://github.com/roncoo/roncoo-education-admin
+roncoo-education-web https://github.com/roncoo/roncoo-education-web
+roncoo-education https://github.com/roncoo/roncoo-education
+
+管理控制台前端wangxin-edu-boss-web，核心框架：vue-element-admin，引用的项目列表
+axios: ^0.18.0 https://www.npmjs.com/package/axios
+echarts: ^4.9.0 https://www.npmjs.com/package/echarts
+element-ui: ^2.4.6 https://www.npmjs.com/package/element-ui
+js-cookie: 2.2.0 https://www.npmjs.com/package/js-cookie
+jsrsasign: ^10.1.5 https://www.npmjs.com/package/jsrsasign
+mockjs: 1.0.1-beta3 https://www.npmjs.com/package/mockjs
+normalize.css: 7.0.0 https://www.npmjs.com/package/normalize.css
+nprogress: 0.2.0 https://www.npmjs.com/package/nprogress
+vue: 2.5.17 https://www.npmjs.com/package/vue
+vue-router: 3.0.1 https://www.npmjs.com/package/vue-router
+vuex: 3.0.1 https://www.npmjs.com/package/vuex
+wangeditor: ^3.1.1 https://www.npmjs.com/package/wangeditor
+autoprefixer: 8.5.0 https://www.npmjs.com/package/autoprefixer
+babel-core: 6.26.0 https://www.npmjs.com/package/babel-core
+babel-eslint: 8.2.6 https://www.npmjs.com/package/babel-eslint
+babel-helper-vue-jsx-merge-props: 2.0.3 https://www.npmjs.com/package/babel-helper-vue-jsx-merge-props
+babel-loader: 7.1.5 https://www.npmjs.com/package/babel-loader
+babel-plugin-syntax-jsx: 6.18.0 https://www.npmjs.com/package/babel-plugin-syntax-jsx
+babel-plugin-transform-runtime: 6.23.0 https://www.npmjs.com/package/babel-plugin-transform-runtime
+babel-plugin-transform-vue-jsx: 3.7.0 https://www.npmjs.com/package/babel-plugin-transform-vue-jsx
+babel-preset-env: 1.7.0 https://www.npmjs.com/package/babel-preset-env
+babel-preset-stage-2: 6.24.1 https://www.npmjs.com/package/babel-preset-stage-2
+chalk: 2.4.1 https://www.npmjs.com/package/chalk
+compression-webpack-plugin: 2.0.0 https://www.npmjs.com/package/compression-webpack-plugin
+copy-webpack-plugin: 4.5.2 https://www.npmjs.com/package/copy-webpack-plugin
+crypto-js: ^4.0.0 https://www.npmjs.com/package/crypto-js
+css-loader: 1.0.0 https://www.npmjs.com/package/css-loader
+eslint: 4.19.1 https://www.npmjs.com/package/eslint
+eslint-friendly-formatter: 4.0.1 https://www.npmjs.com/package/eslint-friendly-formatter
+eslint-loader: 2.0.0 https://www.npmjs.com/package/eslint-loader
+eslint-plugin-vue: 4.7.1 https://www.npmjs.com/package/eslint-plugin-vue
+eventsource-polyfill: 0.9.6 https://www.npmjs.com/package/eventsource-polyfill
+file-loader: 1.1.11 https://www.npmjs.com/package/file-loader
+friendly-errors-webpack-plugin: 1.7.0 https://www.npmjs.com/package/friendly-errors-webpack-plugin
+html-webpack-plugin: 4.0.0-alpha https://www.npmjs.com/package/html-webpack-plugin
+json5-loader: ^2.0.0 https://www.npmjs.com/package/json5-loader
+mini-css-extract-plugin: 0.4.1 https://www.npmjs.com/package/mini-css-extract-plugin
+node-notifier: 5.2.1 https://www.npmjs.com/package/node-notifier
+node-sass: ^4.7.2 https://www.npmjs.com/package/node-sass
+optimize-css-assets-webpack-plugin: 5.0.0 https://www.npmjs.com/package/optimize-css-assets-webpack-plugin
+ora: 3.0.0 https://www.npmjs.com/package/ora
+path-to-regexp: ^2.4.0 https://www.npmjs.com/package/path-to-regexp
+portfinder: 1.0.16 https://www.npmjs.com/package/portfinder
+postcss-import: 12.0.0 https://www.npmjs.com/package/postcss-import
+postcss-loader: 2.1.6 https://www.npmjs.com/package/postcss-loader
+postcss-url: 7.3.2 https://www.npmjs.com/package/postcss-url
+rimraf: 2.6.2 https://www.npmjs.com/package/rimraf
+sass-loader: 7.0.3 https://www.npmjs.com/package/sass-loader
+script-ext-html-webpack-plugin: 2.0.1 https://www.npmjs.com/package/script-ext-html-webpack-plugin
+semver: 5.5.0 https://www.npmjs.com/package/semver
+shelljs: 0.8.2 https://www.npmjs.com/package/shelljs
+svg-sprite-loader: 3.8.0 https://www.npmjs.com/package/svg-sprite-loader
+svgo: 1.0.5 https://www.npmjs.com/package/svgo
+uglifyjs-webpack-plugin: 1.2.7 https://www.npmjs.com/package/uglifyjs-webpack-plugin
+url-loader: 1.0.1 https://www.npmjs.com/package/url-loader
+vue-loader: 15.3.0 https://www.npmjs.com/package/vue-loader
+vue-style-loader: 4.1.2 https://www.npmjs.com/package/vue-style-loader
+vue-template-compiler: 2.5.17 https://www.npmjs.com/package/vue-template-compiler
+webpack: 4.16.5 https://www.npmjs.com/package/webpack
+webpack-bundle-analyzer: 2.13.1 https://www.npmjs.com/package/webpack-bundle-analyzer
+webpack-cli: 3.1.0 https://www.npmjs.com/package/webpack-cli
+webpack-dev-server: 3.1.14 https://www.npmjs.com/package/webpack-dev-server
+webpack-merge: 4.1.4 https://www.npmjs.com/package/webpack-merge
+
+PC端wangxin-web，核心框架：Vuejs + Nuxt.js，引用的项目列表：
+@gauseen/nuxt-proxy: ^1.0.1 @gauseen/nuxt-proxy"">https://www.npmjs.com/package/@gauseen/nuxt-proxy
+@nuxtjs/axios: ^5.0.0 @nuxtjs/axios"">https://www.npmjs.com/package/@nuxtjs/axios
+awe-dnd: ^0.3.4 https://www.npmjs.com/package/awe-dnd
+axios: ^0.19.0 https://www.npmjs.com/package/axios
+cross-env: ^5.2.0 https://www.npmjs.com/package/cross-env
+koa: ^2.5.2 https://www.npmjs.com/package/koa
+lru-cache: ^5.1.1 https://www.npmjs.com/package/lru-cache
+md5: ^2.2.1 https://www.npmjs.com/package/md5
+moment: ^2.24.0 https://www.npmjs.com/package/moment
+node-gyp: ^4.0.0 https://www.npmjs.com/package/node-gyp
+node-sass: ^4.11.0 https://www.npmjs.com/package/node-sass
+nuxt: ^2.0.0 https://www.npmjs.com/package/nuxt
+qrcode: ^1.3.2 https://www.npmjs.com/package/qrcode-terminal
+video.js: ^7.8.4 https://www.npmjs.com/package/video.js
+videojs-contrib-hls: ^5.15.0 https://www.npmjs.com/package/videojs-contrib-hls
+vue-cookie: ^1.1.4 https://www.npmjs.com/package/vue-cookie
+vue-datepicker: latest https://www.npmjs.com/package/vue-datepicker
+wangeditor: ^3.1.1 https://www.npmjs.com/package/wangeditor
+nodemon: ^1.11.0 https://www.npmjs.com/package/nodemon
+sass-loader: ^7.1.0 https://www.npmjs.com/package/sass-loader
+
+移动端wangxin-mobile，核心框架：Vuejs + Nuxt.js，引用的项目列表：
+nuxt: ^2.0.0 https://www.npmjs.com/package/nuxt
+axios: ^0.21.1 https://www.npmjs.com/package/axios
+vue-cookie: ^1.1.4 https://www.npmjs.com/package/vue-cookie
+video.js: ^7.8.4 https://www.npmjs.com/package/video.js
+videojs-contrib-hls: ^5.15.0 https://www.npmjs.com/package/videojs-contrib-hls
+babel-eslint: ^10.0.1 https://www.npmjs.com/package/babel-eslint
+eslint: ^4.19.1 https://www.npmjs.com/package/eslint
+eslint-friendly-formatter: ^4.0.1 https://www.npmjs.com/package/eslint-friendly-formatter
+eslint-loader: ^2.1.1 https://www.npmjs.com/package/eslint-loader
+eslint-plugin-vue: ^4.0.0 https://www.npmjs.com/package/eslint-plugin-vue
+node-sass: ^4.5.3 https://www.npmjs.com/package/node-sass
+sass-loader: ^6.0.5 https://www.npmjs.com/package/sass-loader
+
+使用了字节跳动bytedance的开源图片库：
+IconPark https://github.com/bytedance/IconPark
+Spring项目相关：
+Spring https://github.com/spring-projects/
+
+本项目开源部分可以个人学习使用。未经许可，不可商用。本项目引用的第三方框架，请严格遵守其相关开源协议使用。
+
+官方QQ：1500375268
+官方QQ群：1054181656
+
+1、redis 请开启AOF持久化
+2、迁移系统的时候为保证系统完整性务必迁移redis数据

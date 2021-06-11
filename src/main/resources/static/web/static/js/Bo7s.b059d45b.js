@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["Bo7s"],{Bo7s:function(e,n,t){"use strict";t.r(n);var o=t("KHd+"),s=Object(o.a)({},function(){var e=this.$createElement;return(this._self._c||e)("router-view")},[],!1,null,null,null);s.options.__file="index.vue";n.default=s.exports}}]);

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangxin.langshu.business.edu.dao.user.impl.mapper.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.wangxin.langshu.business.edu.entity.user.old.Student" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modified_time" property="modifiedTime" jdbcType="TIMESTAMP" />
+    <result column="valid_value" property="validValue" jdbcType="TINYINT" />
+    <result column="user_no" property="userNo" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="TINYINT" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="TINYINT" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="head_img_url" property="headImgUrl" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="identity_card_no" property="identityCardNo" jdbcType="VARCHAR" />
+    
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, create_time, modified_time, valid_value, user_no, user_type, mobile, sex, age, nickname, 
+    head_img_url, remark, real_name,identity_card_no
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wangxin.langshu.business.edu.entity.user.old.StudentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from student
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart >= 0" >
+      limit ${limitStart} , ${pageSize}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String"  >
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String"  >
+    delete from student
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wangxin.langshu.business.edu.entity.user.old.StudentExample" >
+    delete from student
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wangxin.langshu.business.edu.entity.user.old.Student" >
+    insert into student (id, create_time, modified_time, 
+      valid_value, user_no, user_type, 
+      mobile, sex, age, nickname, 
+      head_img_url, remark,real_name,identity_card_no)
+    values (#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifiedTime,jdbcType=TIMESTAMP}, 
+      #{validValue,jdbcType=TINYINT}, #{userNo,jdbcType=VARCHAR}, #{userType,jdbcType=TINYINT}, 
+      #{mobile,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, #{age,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, 
+      #{headImgUrl,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},#{real_name,jdbcType=VARCHAR},#{identity_card_no,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangxin.langshu.business.edu.entity.user.old.Student" >
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="modifiedTime != null" >
+        modified_time,
+      </if>
+      <if test="validValue != null" >
+        valid_value,
+      </if>
+      <if test="userNo != null" >
+        user_no,
+      </if>
+      <if test="userType != null" >
+        user_type,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="headImgUrl != null" >
+        head_img_url,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="realName != null" >
+        real_name,
+      </if>
+      <if test="identityCardNo != null" >
+        identity_card_no,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedTime != null" >
+        #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validValue != null" >
+        #{validValue,jdbcType=TINYINT},
+      </if>
+      <if test="userNo != null" >
+        #{userNo,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=TINYINT},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="headImgUrl != null" >
+        #{headImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardNo != null" >
+        #{identityCardNo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wangxin.langshu.business.edu.entity.user.old.StudentExample" resultType="java.lang.Integer" >
+    select count(*) from student
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update student
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedTime != null" >
+        modified_time = #{record.modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.validValue != null" >
+        valid_value = #{record.validValue,jdbcType=TINYINT},
+      </if>
+      <if test="record.userNo != null" >
+        user_no = #{record.userNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userType != null" >
+        user_type = #{record.userType,jdbcType=TINYINT},
+      </if>
+      <if test="record.mobile != null" >
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=TINYINT},
+      </if>
+      <if test="record.age != null" >
+        age = #{record.age,jdbcType=INTEGER},
+      </if>
+      <if test="record.nickname != null" >
+        nickname = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.headImgUrl != null" >
+        head_img_url = #{record.headImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realName != null" >
+        real_name = #{record.realName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardNo != null" >
+        identity_card_no = #{record.identityCardNo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update student
+    set id = #{record.id,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      modified_time = #{record.modifiedTime,jdbcType=TIMESTAMP},
+      valid_value = #{record.validValue,jdbcType=TINYINT},
+      user_no = #{record.userNo,jdbcType=VARCHAR},
+      user_type = #{record.userType,jdbcType=TINYINT},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=TINYINT},
+      age = #{record.age,jdbcType=INTEGER},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      head_img_url = #{record.headImgUrl,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      real_name = #{record.realName,jdbcType=VARCHAR},
+      identity_card_no = #{record.identityCardNo,jdbcType=VARCHAR},
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangxin.langshu.business.edu.entity.user.old.Student" >
+    update student
+    <set >
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null" >
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validValue != null" >
+        valid_value = #{validValue,jdbcType=TINYINT},
+      </if>
+      <if test="userNo != null" >
+        user_no = #{userNo,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=TINYINT},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="headImgUrl != null" >
+        head_img_url = #{headImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardNo != null" >
+        identity_card_no = #{identityCardNo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wangxin.langshu.business.edu.entity.user.old.Student" >
+    update student
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      valid_value = #{validValue,jdbcType=TINYINT},
+      user_no = #{userNo,jdbcType=VARCHAR},
+      user_type = #{userType,jdbcType=TINYINT},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=TINYINT},
+      age = #{age,jdbcType=INTEGER},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      head_img_url = #{headImgUrl,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      identity_card_no = #{identityCardNo,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

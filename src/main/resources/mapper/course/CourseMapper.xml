@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangxin.langshu.business.edu.dao.course.impl.mapper.CourseMapper" >
+  <resultMap id="BaseResultMap" type="com.wangxin.langshu.business.edu.entity.course.old.Course" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modified_time" property="modifiedTime" jdbcType="TIMESTAMP" />
+    <result column="valid_value" property="validValue" jdbcType="TINYINT" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="teacher_user_no" property="teacherUserNo" jdbcType="VARCHAR" />
+    <result column="subject_id1" property="subjectId1" jdbcType="VARCHAR" />
+    <result column="subject_id2" property="subjectId2" jdbcType="VARCHAR" />
+    <result column="subject_id3" property="subjectId3" jdbcType="VARCHAR" />
+    <result column="course_name" property="courseName" jdbcType="VARCHAR" />
+    <result column="course_logo" property="courseLogo" jdbcType="VARCHAR" />
+    <result column="introduce_id" property="introduceId" jdbcType="VARCHAR" />
+    <result column="is_free" property="isFree" jdbcType="TINYINT" />
+    <result column="course_original" property="courseOriginal" jdbcType="DECIMAL" />
+    <result column="course_discount" property="courseDiscount" jdbcType="DECIMAL" />
+    <result column="is_putaway" property="isPutaway" jdbcType="TINYINT" />
+    <result column="course_sort" property="courseSort" jdbcType="INTEGER" />
+    <result column="buy_count" property="buyCount" jdbcType="INTEGER" />
+    <result column="study_count" property="studyCount" jdbcType="INTEGER" />
+    <result column="lesson_total" property="lessonTotal" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, create_time, modified_time, valid_value, sort, teacher_user_no, subject_id1, subject_id2, 
+    subject_id3, course_name, course_logo, introduce_id, is_free, course_original, course_discount, 
+    is_putaway, course_sort, buy_count, study_count, lesson_total
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wangxin.langshu.business.edu.entity.course.old.CourseExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from course
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart >= 0" >
+      limit ${limitStart} , ${pageSize}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String"  >
+    select 
+    <include refid="Base_Column_List" />
+    from course
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String"  >
+    delete from course
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wangxin.langshu.business.edu.entity.course.old.CourseExample" >
+    delete from course
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wangxin.langshu.business.edu.entity.course.old.Course" >
+    insert into course (id, create_time, modified_time, 
+      valid_value, sort, teacher_user_no, 
+      subject_id1, subject_id2, subject_id3, 
+      course_name, course_logo, introduce_id, 
+      is_free, course_original, course_discount, 
+      is_putaway, course_sort, buy_count, 
+      study_count, lesson_total)
+    values (#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifiedTime,jdbcType=TIMESTAMP}, 
+      #{validValue,jdbcType=TINYINT}, #{sort,jdbcType=INTEGER}, #{teacherUserNo,jdbcType=VARCHAR}, 
+      #{subjectId1,jdbcType=VARCHAR}, #{subjectId2,jdbcType=VARCHAR}, #{subjectId3,jdbcType=VARCHAR}, 
+      #{courseName,jdbcType=VARCHAR}, #{courseLogo,jdbcType=VARCHAR}, #{introduceId,jdbcType=VARCHAR}, 
+      #{isFree,jdbcType=TINYINT}, #{courseOriginal,jdbcType=DECIMAL}, #{courseDiscount,jdbcType=DECIMAL}, 
+      #{isPutaway,jdbcType=TINYINT}, #{courseSort,jdbcType=INTEGER}, #{buyCount,jdbcType=INTEGER}, 
+      #{studyCount,jdbcType=INTEGER}, #{lessonTotal,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangxin.langshu.business.edu.entity.course.old.Course" >
+    insert into course
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifiedTime != null" >
+        modified_time,
+      </if>
+      <if test="validValue != null" >
+        valid_value,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="teacherUserNo != null" >
+        teacher_user_no,
+      </if>
+      <if test="subjectId1 != null" >
+        subject_id1,
+      </if>
+      <if test="subjectId2 != null" >
+        subject_id2,
+      </if>
+      <if test="subjectId3 != null" >
+        subject_id3,
+      </if>
+      <if test="courseName != null" >
+        course_name,
+      </if>
+      <if test="courseLogo != null" >
+        course_logo,
+      </if>
+      <if test="introduceId != null" >
+        introduce_id,
+      </if>
+      <if test="isFree != null" >
+        is_free,
+      </if>
+      <if test="courseOriginal != null" >
+        course_original,
+      </if>
+      <if test="courseDiscount != null" >
+        course_discount,
+      </if>
+      <if test="isPutaway != null" >
+        is_putaway,
+      </if>
+      <if test="courseSort != null" >
+        course_sort,
+      </if>
+      <if test="buyCount != null" >
+        buy_count,
+      </if>
+      <if test="studyCount != null" >
+        study_count,
+      </if>
+      <if test="lessonTotal != null" >
+        lesson_total,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null" >
+        #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validValue != null" >
+        #{validValue,jdbcType=TINYINT},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="teacherUserNo != null" >
+        #{teacherUserNo,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId1 != null" >
+        #{subjectId1,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId2 != null" >
+        #{subjectId2,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId3 != null" >
+        #{subjectId3,jdbcType=VARCHAR},
+      </if>
+      <if test="courseName != null" >
+        #{courseName,jdbcType=VARCHAR},
+      </if>
+      <if test="courseLogo != null" >
+        #{courseLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="introduceId != null" >
+        #{introduceId,jdbcType=VARCHAR},
+      </if>
+      <if test="isFree != null" >
+        #{isFree,jdbcType=TINYINT},
+      </if>
+      <if test="courseOriginal != null" >
+        #{courseOriginal,jdbcType=DECIMAL},
+      </if>
+      <if test="courseDiscount != null" >
+        #{courseDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="isPutaway != null" >
+        #{isPutaway,jdbcType=TINYINT},
+      </if>
+      <if test="courseSort != null" >
+        #{courseSort,jdbcType=INTEGER},
+      </if>
+      <if test="buyCount != null" >
+        #{buyCount,jdbcType=INTEGER},
+      </if>
+      <if test="studyCount != null" >
+        #{studyCount,jdbcType=INTEGER},
+      </if>
+      <if test="lessonTotal != null" >
+        #{lessonTotal,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wangxin.langshu.business.edu.entity.course.old.CourseExample" resultType="java.lang.Integer" >
+    select count(*) from course
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update course
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedTime != null" >
+        modified_time = #{record.modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.validValue != null" >
+        valid_value = #{record.validValue,jdbcType=TINYINT},
+      </if>
+      <if test="record.sort != null" >
+        sort = #{record.sort,jdbcType=INTEGER},
+      </if>
+      <if test="record.teacherUserNo != null" >
+        teacher_user_no = #{record.teacherUserNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjectId1 != null" >
+        subject_id1 = #{record.subjectId1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjectId2 != null" >
+        subject_id2 = #{record.subjectId2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjectId3 != null" >
+        subject_id3 = #{record.subjectId3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.courseName != null" >
+        course_name = #{record.courseName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.courseLogo != null" >
+        course_logo = #{record.courseLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.introduceId != null" >
+        introduce_id = #{record.introduceId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isFree != null" >
+        is_free = #{record.isFree,jdbcType=TINYINT},
+      </if>
+      <if test="record.courseOriginal != null" >
+        course_original = #{record.courseOriginal,jdbcType=DECIMAL},
+      </if>
+      <if test="record.courseDiscount != null" >
+        course_discount = #{record.courseDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isPutaway != null" >
+        is_putaway = #{record.isPutaway,jdbcType=TINYINT},
+      </if>
+      <if test="record.courseSort != null" >
+        course_sort = #{record.courseSort,jdbcType=INTEGER},
+      </if>
+      <if test="record.buyCount != null" >
+        buy_count = #{record.buyCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.studyCount != null" >
+        study_count = #{record.studyCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.lessonTotal != null" >
+        lesson_total = #{record.lessonTotal,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update course
+    set id = #{record.id,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      modified_time = #{record.modifiedTime,jdbcType=TIMESTAMP},
+      valid_value = #{record.validValue,jdbcType=TINYINT},
+      sort = #{record.sort,jdbcType=INTEGER},
+      teacher_user_no = #{record.teacherUserNo,jdbcType=VARCHAR},
+      subject_id1 = #{record.subjectId1,jdbcType=VARCHAR},
+      subject_id2 = #{record.subjectId2,jdbcType=VARCHAR},
+      subject_id3 = #{record.subjectId3,jdbcType=VARCHAR},
+      course_name = #{record.courseName,jdbcType=VARCHAR},
+      course_logo = #{record.courseLogo,jdbcType=VARCHAR},
+      introduce_id = #{record.introduceId,jdbcType=VARCHAR},
+      is_free = #{record.isFree,jdbcType=TINYINT},
+      course_original = #{record.courseOriginal,jdbcType=DECIMAL},
+      course_discount = #{record.courseDiscount,jdbcType=DECIMAL},
+      is_putaway = #{record.isPutaway,jdbcType=TINYINT},
+      course_sort = #{record.courseSort,jdbcType=INTEGER},
+      buy_count = #{record.buyCount,jdbcType=INTEGER},
+      study_count = #{record.studyCount,jdbcType=INTEGER},
+      lesson_total = #{record.lessonTotal,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangxin.langshu.business.edu.entity.course.old.Course" >
+    update course
+    <set >
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null" >
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validValue != null" >
+        valid_value = #{validValue,jdbcType=TINYINT},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="teacherUserNo != null" >
+        teacher_user_no = #{teacherUserNo,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId1 != null" >
+        subject_id1 = #{subjectId1,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId2 != null" >
+        subject_id2 = #{subjectId2,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId3 != null" >
+        subject_id3 = #{subjectId3,jdbcType=VARCHAR},
+      </if>
+      <if test="courseName != null" >
+        course_name = #{courseName,jdbcType=VARCHAR},
+      </if>
+      <if test="courseLogo != null" >
+        course_logo = #{courseLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="introduceId != null" >
+        introduce_id = #{introduceId,jdbcType=VARCHAR},
+      </if>
+      <if test="isFree != null" >
+        is_free = #{isFree,jdbcType=TINYINT},
+      </if>
+      <if test="courseOriginal != null" >
+        course_original = #{courseOriginal,jdbcType=DECIMAL},
+      </if>
+      <if test="courseDiscount != null" >
+        course_discount = #{courseDiscount,jdbcType=DECIMAL},
+      </if>
+      <if test="isPutaway != null" >
+        is_putaway = #{isPutaway,jdbcType=TINYINT},
+      </if>
+      <if test="courseSort != null" >
+        course_sort = #{courseSort,jdbcType=INTEGER},
+      </if>
+      <if test="buyCount != null" >
+        buy_count = #{buyCount,jdbcType=INTEGER},
+      </if>
+      <if test="studyCount != null" >
+        study_count = #{studyCount,jdbcType=INTEGER},
+      </if>
+      <if test="lessonTotal != null" >
+        lesson_total = #{lessonTotal,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wangxin.langshu.business.edu.entity.course.old.Course" >
+    update course
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      valid_value = #{validValue,jdbcType=TINYINT},
+      sort = #{sort,jdbcType=INTEGER},
+      teacher_user_no = #{teacherUserNo,jdbcType=VARCHAR},
+      subject_id1 = #{subjectId1,jdbcType=VARCHAR},
+      subject_id2 = #{subjectId2,jdbcType=VARCHAR},
+      subject_id3 = #{subjectId3,jdbcType=VARCHAR},
+      course_name = #{courseName,jdbcType=VARCHAR},
+      course_logo = #{courseLogo,jdbcType=VARCHAR},
+      introduce_id = #{introduceId,jdbcType=VARCHAR},
+      is_free = #{isFree,jdbcType=TINYINT},
+      course_original = #{courseOriginal,jdbcType=DECIMAL},
+      course_discount = #{courseDiscount,jdbcType=DECIMAL},
+      is_putaway = #{isPutaway,jdbcType=TINYINT},
+      course_sort = #{courseSort,jdbcType=INTEGER},
+      buy_count = #{buyCount,jdbcType=INTEGER},
+      study_count = #{studyCount,jdbcType=INTEGER},
+      lesson_total = #{lessonTotal,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,81 @@
+/*!
+ * Programatically add the following
+ */
+
+/*! @name @videojs/http-streaming @version 2.8.2 @license Apache-2.0 */
+
+/*! @name aes-decrypter @version 3.1.2 @license Apache-2.0 */
+
+/*! @name pkcs7 @version 1.0.4 @license Apache-2.0 */
+
+
+/*!
+ * Awe-dnd v0.3.2
+ * (c) 2018 Awe <hilongjw@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
+ * tiny-cookie - A tiny cookie manipulation plugin
+ * https://github.com/Alex1990/tiny-cookie
+ * Under the MIT license | (c) Alex Chao
+ */
+
+/*!
+ * vue-client-only v2.0.0
+ * (c) 2019-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
+ * vue-no-ssr v1.1.1
+ * (c) 2018-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+
+//! moment.js
+
+//! moment.js locale configuration
+
+
+/*!
+  * vue-router v3.5.1
+  * (c) 2021 Evan You
+  * @license MIT
+  */
+
+/*!
+ * Vue.js v2.6.13
+ * (c) 2014-2021 Evan You
+ * Released under the MIT License.
+ */
+
+/*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
+
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+
+/**
+ * @license
+ * Video.js 6.13.0 <http://videojs.com/>
+ * Copyright Brightcove, Inc. <https://www.brightcove.com/>
+ * Available under Apache License Version 2.0
+ * <https://github.com/videojs/video.js/blob/master/LICENSE>
+ *
+ * Includes vtt.js <https://github.com/mozilla/vtt.js>
+ * Available under Apache License Version 2.0
+ * <https://github.com/mozilla/vtt.js/blob/master/LICENSE>
+ */

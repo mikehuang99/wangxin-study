@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangxin.langshu.business.edu.dao.user.impl.mapper.TeacherApplyMapper" >
+  <resultMap id="BaseResultMap" type="com.wangxin.langshu.business.edu.entity.user.old.TeacherApply" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modified_time" property="modifiedTime" jdbcType="TIMESTAMP" />
+    <result column="valid_value" property="validValue" jdbcType="TINYINT" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="apply_status" property="applyStatus" jdbcType="TINYINT" />
+    <result column="apply_result_desc" property="applyResultDesc" jdbcType="VARCHAR" />
+    <result column="teacher_user_no" property="teacherUserNo" jdbcType="VARCHAR" />
+    <result column="teacher_name" property="teacherName" jdbcType="VARCHAR" />
+    <result column="teacher_mobile" property="teacherMobile" jdbcType="CHAR" />
+    <result column="teacher_email" property="teacherEmail" jdbcType="VARCHAR" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="head_img_url" property="headImgUrl" jdbcType="VARCHAR" />
+    <result column="introduce" property="introduce" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, create_time, modified_time, valid_value, sort, apply_status, apply_result_desc, teacher_user_no, 
+    teacher_name, teacher_mobile, teacher_email, position, head_img_url, introduce
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wangxin.langshu.business.edu.entity.user.old.TeacherApplyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from teacher_apply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart >= 0" >
+      limit ${limitStart} , ${pageSize}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String"  >
+    select 
+    <include refid="Base_Column_List" />
+    from teacher_apply
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String"  >
+    delete from teacher_apply
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wangxin.langshu.business.edu.entity.user.old.TeacherApplyExample" >
+    delete from teacher_apply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wangxin.langshu.business.edu.entity.user.old.TeacherApply" >
+    insert into teacher_apply (id, create_time, modified_time, 
+      valid_value, sort, apply_status, 
+      apply_result_desc, teacher_user_no, teacher_name, 
+      teacher_mobile, teacher_email, position, 
+      head_img_url, introduce
+      )
+    values (#{id,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifiedTime,jdbcType=TIMESTAMP}, 
+      #{validValue,jdbcType=TINYINT}, #{sort,jdbcType=INTEGER}, #{applyStatus,jdbcType=TINYINT}, 
+      #{applyResultDesc,jdbcType=VARCHAR}, #{teacherUserNo,jdbcType=VARCHAR}, #{teacherName,jdbcType=VARCHAR}, 
+      #{teacherMobile,jdbcType=CHAR}, #{teacherEmail,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
+      #{headImgUrl,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wangxin.langshu.business.edu.entity.user.old.TeacherApply" >
+    insert into teacher_apply
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifiedTime != null" >
+        modified_time,
+      </if>
+      <if test="validValue != null" >
+        valid_value,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="applyStatus != null" >
+        apply_status,
+      </if>
+      <if test="applyResultDesc != null" >
+        apply_result_desc,
+      </if>
+      <if test="teacherUserNo != null" >
+        teacher_user_no,
+      </if>
+      <if test="teacherName != null" >
+        teacher_name,
+      </if>
+      <if test="teacherMobile != null" >
+        teacher_mobile,
+      </if>
+      <if test="teacherEmail != null" >
+        teacher_email,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="headImgUrl != null" >
+        head_img_url,
+      </if>
+      <if test="introduce != null" >
+        introduce,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null" >
+        #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validValue != null" >
+        #{validValue,jdbcType=TINYINT},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="applyStatus != null" >
+        #{applyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="applyResultDesc != null" >
+        #{applyResultDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherUserNo != null" >
+        #{teacherUserNo,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherName != null" >
+        #{teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherMobile != null" >
+        #{teacherMobile,jdbcType=CHAR},
+      </if>
+      <if test="teacherEmail != null" >
+        #{teacherEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="headImgUrl != null" >
+        #{headImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null" >
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wangxin.langshu.business.edu.entity.user.old.TeacherApplyExample" resultType="java.lang.Integer" >
+    select count(*) from teacher_apply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update teacher_apply
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedTime != null" >
+        modified_time = #{record.modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.validValue != null" >
+        valid_value = #{record.validValue,jdbcType=TINYINT},
+      </if>
+      <if test="record.sort != null" >
+        sort = #{record.sort,jdbcType=INTEGER},
+      </if>
+      <if test="record.applyStatus != null" >
+        apply_status = #{record.applyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.applyResultDesc != null" >
+        apply_result_desc = #{record.applyResultDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teacherUserNo != null" >
+        teacher_user_no = #{record.teacherUserNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teacherName != null" >
+        teacher_name = #{record.teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teacherMobile != null" >
+        teacher_mobile = #{record.teacherMobile,jdbcType=CHAR},
+      </if>
+      <if test="record.teacherEmail != null" >
+        teacher_email = #{record.teacherEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.position != null" >
+        position = #{record.position,jdbcType=VARCHAR},
+      </if>
+      <if test="record.headImgUrl != null" >
+        head_img_url = #{record.headImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.introduce != null" >
+        introduce = #{record.introduce,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update teacher_apply
+    set id = #{record.id,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      modified_time = #{record.modifiedTime,jdbcType=TIMESTAMP},
+      valid_value = #{record.validValue,jdbcType=TINYINT},
+      sort = #{record.sort,jdbcType=INTEGER},
+      apply_status = #{record.applyStatus,jdbcType=TINYINT},
+      apply_result_desc = #{record.applyResultDesc,jdbcType=VARCHAR},
+      teacher_user_no = #{record.teacherUserNo,jdbcType=VARCHAR},
+      teacher_name = #{record.teacherName,jdbcType=VARCHAR},
+      teacher_mobile = #{record.teacherMobile,jdbcType=CHAR},
+      teacher_email = #{record.teacherEmail,jdbcType=VARCHAR},
+      position = #{record.position,jdbcType=VARCHAR},
+      head_img_url = #{record.headImgUrl,jdbcType=VARCHAR},
+      introduce = #{record.introduce,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wangxin.langshu.business.edu.entity.user.old.TeacherApply" >
+    update teacher_apply
+    <set >
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null" >
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validValue != null" >
+        valid_value = #{validValue,jdbcType=TINYINT},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="applyStatus != null" >
+        apply_status = #{applyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="applyResultDesc != null" >
+        apply_result_desc = #{applyResultDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherUserNo != null" >
+        teacher_user_no = #{teacherUserNo,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherName != null" >
+        teacher_name = #{teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherMobile != null" >
+        teacher_mobile = #{teacherMobile,jdbcType=CHAR},
+      </if>
+      <if test="teacherEmail != null" >
+        teacher_email = #{teacherEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="headImgUrl != null" >
+        head_img_url = #{headImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null" >
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wangxin.langshu.business.edu.entity.user.old.TeacherApply" >
+    update teacher_apply
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      valid_value = #{validValue,jdbcType=TINYINT},
+      sort = #{sort,jdbcType=INTEGER},
+      apply_status = #{applyStatus,jdbcType=TINYINT},
+      apply_result_desc = #{applyResultDesc,jdbcType=VARCHAR},
+      teacher_user_no = #{teacherUserNo,jdbcType=VARCHAR},
+      teacher_name = #{teacherName,jdbcType=VARCHAR},
+      teacher_mobile = #{teacherMobile,jdbcType=CHAR},
+      teacher_email = #{teacherEmail,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      head_img_url = #{headImgUrl,jdbcType=VARCHAR},
+      introduce = #{introduce,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
