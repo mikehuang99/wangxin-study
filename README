@@ -216,7 +216,7 @@ PC前台主要功能介绍
 /com/github/xiaoymin/swagger-bootstrap-ui/1.9.1/swagger-bootstrap-ui-1.9.1.jar
 /org/projectlombok/lombok/1.16.22/lombok-1.16.22.jar
 
-系统使用了领课教育roncoo-education部分前后端代码(基于MIT协议)：
+系统使用了领课教育roncoo-education部分前后端代码(领课教育的代码基于MIT协议)：
 roncoo-education-admin https://github.com/roncoo/roncoo-education-admin
 roncoo-education-web https://github.com/roncoo/roncoo-education-web
 roncoo-education https://github.com/roncoo/roncoo-education
