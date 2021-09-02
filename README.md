@@ -12,6 +12,9 @@
 #### 移动端演示地址：
 #### 后台演示地址： 
 
+
+![image](https://github.com/mikehuang99/wangxin-study/blob/main/image-readme/%E6%B5%AA%E6%A0%91%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E7%B3%BB%E7%BB%9F-%E7%BB%84%E6%88%90.png)
+
 ### PC前台主要功能介绍
 ##### 首页功能：导航模块，订单模块，广告模块
 ##### 列表功能：分类模块，课程详情页功能，课程介绍、目录的展示和购买、播放功能等
