@@ -7,7 +7,7 @@
 
 ## 可以向官方申请获取 免费商业授权(无功能性限制) ，使用过程中须遵循协议规定，可以二次开发，但不可二次转售。
 
-![image](https://github.com/mikehuang99/wangxin-study/blob/main/image-readme/%E6%B5%AA%E6%A0%91%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E7%B3%BB%E7%BB%9F-%E7%BB%84%E6%88%90.png)
+![image](image-readme/%E6%B5%AA%E6%A0%91%E5%AD%A6%E4%B9%A0%E8%80%83%E8%AF%95%E7%B3%BB%E7%BB%9F-%E7%BB%84%E6%88%90.png)
 
 ### 演示地址
 #### 前端演示地址：
