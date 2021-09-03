@@ -42,6 +42,7 @@
 ##### 营销管理：学习卡、优惠券等
 ##### 学习记录：查看学生学习记录
 
+<img src="https://github.com/mikehuang99/wangxin-study/tree/main/image-readme" width="100" height="200"/>
 ![](image-readme/1921.png =100x100)
 ![image](image-readme/2e12easd2.png)
 ![image](image-readme/fwefww321.png)
