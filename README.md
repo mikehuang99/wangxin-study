@@ -42,7 +42,7 @@
 ##### 营销管理：学习卡、优惠券等
 ##### 学习记录：查看学生学习记录
 
-![image](image-readme/1921.png =100x100)
+![](image-readme/1921.png =100x100)
 ![image](image-readme/2e12easd2.png)
 ![image](image-readme/fwefww321.png)
 ![image](image-readme/sdfsdfwef.png)
