@@ -9,6 +9,9 @@
 
 ## 安装部署教程、使用教程、二次开发教程 持续更新中........
 
+### QQ技术交流群：1054181656
+### 联系QQ：1500375268
+
 ### 演示地址
 #### 前端演示地址：
 #### 移动端演示地址：
@@ -42,6 +45,14 @@
 ##### 营销管理：学习卡、优惠券等
 ##### 学习记录：查看学生学习记录
 
+### 移动端截图：
+
+![image](image-readme/1.png)
+![image](image-readme/2.png)
+![image](image-readme/3.png)
+![image](image-readme/4.png)
+![image](image-readme/5.png)
+![image](image-readme/6.png)
 
 
 ### QQ技术交流群：1054181656
