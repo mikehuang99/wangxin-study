@@ -45,6 +45,8 @@
 ##### 营销管理：学习卡、优惠券等
 ##### 学习记录：查看学生学习记录
 
+### 移动端截图：
+
 ![image](image-readme/1.png)
 ![image](image-readme/2.png)
 ![image](image-readme/3.png)
