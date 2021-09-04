@@ -45,6 +45,33 @@
 ##### 营销管理：学习卡、优惠券等
 ##### 学习记录：查看学生学习记录
 
+
+### 工程目录说明：
+##### 该工程为Maven工程，文件夹wangxin-web为PC端的源代码，文件夹wangxin-mobile为移动端的源代码。
+##### 项目的版本号在src/main/resources/version文件里面。
+##### 文件夹sql里面为工程SQL，请对应版本，全量的意思是整个项目的SQL的SQL文件，用于新部署项目或者重新部署项目。增量是本版本基于上个版本的数据库变化，用于升级版本，升级版本是一个非常有风险的操作，升级之前务必备份原来的SQL和项目工程，防止升级意外带来不可逆转的麻烦。
+##### src/main/resources/static/为前端打包后的文件，web文件夹是管理控制台前端文件，w-web是PC端文件，wxmobile是移动端文件。
+##### 项目的配置文件为src/main/resources/application.properties
+
+### 工程安装包本地部署
+##### 1、安装jdk1.8、mysql、redis,启动mysql和redis
+##### 2、去百度网盘下载最新的安装包和SQL文件
+链接: https://pan.baidu.com/s/1WDAI95Iq7RUZ7z--tuLo4w  密码: 3bdi
+##### 3、导入SQL文件到Mysql
+##### 4、启动工程，命令：java -jar jar包名称
+
+### 工程编译启动
+##### 1、安装jdk1.8、mysql、redis、eclipse，启动mysql和redis
+##### 2、clone项目下来
+##### 3、用eclipse导入项目
+##### 4、运行com.wangxin.langshu.ApiApplication，启动
+
+### 终端页面访问
+##### 1、管理控制台：http://127.0.0.1:8080/web/index.html  用户名/密码：13800138000/13800138000 ，可以配置一些需要的，比如阿里云短信模版等。
+##### 2、PC端：http://127.0.0.1:8080/w-web/index.html    用户名/密码：13800138000/13800138000 ，上面管理控制台可以设置登录用户名和密码，也可以注册后登录。
+##### 3、移动端：http://127.0.0.1:8080/wxmobile/index.html   用户名/密码：13800138000/13800138000，上面管理控制台可以设置登录用户名和密码，也可以注册后登录。
+
+
 ### 移动端截图：
 
 ![image](image-readme/1.png)
