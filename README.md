@@ -42,6 +42,12 @@
 ##### 营销管理：学习卡、优惠券等
 ##### 学习记录：查看学生学习记录
 
+![image](image-readme/1.png)
+![image](image-readme/2.png)
+![image](image-readme/3.png)
+![image](image-readme/4.png)
+![image](image-readme/5.png)
+![image](image-readme/6.png)
 
 
 ### QQ技术交流群：1054181656
