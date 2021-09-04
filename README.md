@@ -3,7 +3,6 @@
 # 浪树学习考试系统
 #### 浪树学习考试系统（wangxin-education），致力打造一个低成本通用的在线教育系统，让用户直接通过系统可视化配置并尽可能无须修改任何代码即可实现上线商用。系统采用前后端分离模式，前台和移动端采用vue.js为核心框架，后台采用Java语言，框架springboot+spring+mybatis+redis+mysql。系统目前主要功能有课程点播、直播、练习、考试、支付、营销等功能。
 
-### 最新消息请访问 https://github.com/mikehuang99/wangxin-study
 
 ## java后端、PC前端(文件夹wangxin-web)、移动端(文件夹wangxin-mobile) 源代码 已开放
 
