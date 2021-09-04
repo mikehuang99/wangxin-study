@@ -47,11 +47,11 @@
 
 
 ### 工程目录说明：
-##### 该工程为Maven工程，文件夹wangxin-web为PC端的源代码，文件夹wangxin-mobile为移动端的源代码。
-##### 项目的版本号在src/main/resources/version文件里面。
-##### 文件夹sql里面为工程SQL，请对应版本，全量的意思是整个项目的SQL的SQL文件，用于新部署项目或者重新部署项目。增量是本版本基于上个版本的数据库变化，用于升级版本，升级版本是一个非常有风险的操作，升级之前务必备份原来的SQL和项目工程，防止升级意外带来不可逆转的麻烦。
-##### src/main/resources/static/为前端打包后的文件，web文件夹是管理控制台前端文件，w-web是PC端文件，wxmobile是移动端文件。
-##### 项目的配置文件为src/main/resources/application.properties
+##### 1、该工程为Maven工程，文件夹wangxin-web为PC端的源代码，文件夹wangxin-mobile为移动端的源代码。
+##### 2、项目的版本号在src/main/resources/version文件里面。
+##### 3、文件夹sql里面为工程SQL，请对应版本，全量的意思是整个项目的SQL的SQL文件，用于新部署项目或者重新部署项目。增量是本版本基于上个版本的数据库变化，用于升级版本，升级版本是一个非常有风险的操作，升级之前务必备份原来的SQL和项目工程，防止升级意外带来不可逆转的麻烦。
+##### 4、src/main/resources/static/为前端打包后的文件，web文件夹是管理控制台前端文件，w-web是PC端文件，wxmobile是移动端文件。
+##### 5、项目的配置文件为src/main/resources/application.properties
 
 ### 工程安装包本地部署
 ##### 1、安装jdk1.8、mysql、redis,启动mysql和redis
